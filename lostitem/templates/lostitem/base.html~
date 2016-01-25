@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+    <head>
+	<title>Lost and found items management</title>
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- Our CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>    
+	<h1> Ici ce sera l'ecran principal de recherche, il nous faut une liste d'objets et une recherche</h1>
+	<!-- Example of a list in python -->
+	{% for lostitem in lostitems %}
+	    <div>
+		<h3>Description : {{lostitem.description|linebreaks}}</h3>
+		<p>Found at : {{lostitem.where_was_found}}</p>
+		<p>Added to the database the : {{lostitem.added_date}}</p>
+	    </div>
+	{% endfor %}
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% block content %}
+	<!-- Example of a list in python -->
+	{% for lostitem in lostitems %}
+	    <div>
+		<h3>Description : {{lostitem.description|linebreaks}}</h3>
+		<p>Found at : {{lostitem.where_was_found}}</p>
+		<p>Added to the database the : {{lostitem.added_date}}</p>
+	    </div>
+	{% endfor %}
+{% endblock %}
